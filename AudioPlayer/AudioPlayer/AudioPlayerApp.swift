@@ -11,7 +11,9 @@ import SwiftUI
 struct AudioPlayerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                AudioListView(audios: Audio.data.sorted {$0.track < $1.track})
+            }
         }
     }
 }
